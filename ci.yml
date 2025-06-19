@@ -1,0 +1,23 @@
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build student_service
+      run: docker build ./student_service -t student-service
+
+    - name: Build stats_service
+      run: docker build ./stats_service -t stats-service
