@@ -35,3 +35,4 @@ jobs:
           context: ./stats_service
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/stats_service:latest
+          
