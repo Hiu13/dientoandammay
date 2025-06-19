@@ -27,11 +27,11 @@ jobs:
         with:
           context: ./student_service
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/student_service:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/student_service:latest
 
       - name: Build & Push stats_service
         uses: docker/build-push-action@v5
         with:
           context: ./stats_service
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/stats_service:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/stats_service:latest
